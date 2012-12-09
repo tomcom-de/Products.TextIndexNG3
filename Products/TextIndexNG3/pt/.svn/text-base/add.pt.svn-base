@@ -1,0 +1,377 @@
+<style type="text/css">
+
+td {
+    font-size: 80%;
+    vertical-align: top;
+}
+
+</style>
+
+<p class="form-help">
+Add a TextIndexNG3 index
+</p>
+
+
+<form action="manage_addTextIndexNG3" method="post" enctype="multipart/form-data" name="addform">
+<table cellspacing="0" cellpadding="2" border="1">
+  <tr>
+    <td>
+    <div class="form-label">
+    Id
+    </div>
+    </td>
+    <td>
+      <input type="text" name="id" size="40" />
+      <br/>
+      <div style="font-size: 80%">
+          <a href="#" onclick="document.addform.id.value='PrincipiaSearchSource'">PrincipiaSearchSource</a>
+          &bull;
+          <a href="#" onclick="document.addform.id.value='SearchableText'">SearchableText</a>
+      </div>
+    </td>
+    <td>
+      Id of the index
+    <td>
+  </tr>
+
+  <tr>
+    <td>
+    <div class="form-label">
+    Fields
+    </div>
+    </td>
+    <td>
+    <textarea name="extra.fields:record:lines" cols="40" rows="2"></textarea>
+    </td>
+    <td>
+      Specify all attributes or fieldnames if the index should index multiple fields or
+      if the fieldname is different from the Id. Either leave the texarea empty or use 
+      one line for each attribute or field name.
+    <td>
+  </tr>
+
+  <tr>
+    <td>
+    <div class="form-label">
+    Default encoding
+    </div>
+    </td>
+    <td>
+    <input type="text" name="extra.default_encoding:record" value="iso-8859-15"/>
+    <br/>
+    <div style="font-size: 80%">
+        <a href="#" onclick="document.addform['extra.default_encoding:record'].value='ascii'">ASCII</a>
+        &bull;
+        <a href="#" onclick="document.addform['extra.default_encoding:record'].value='iso-8859-15'">ISO-8859-15</a>
+        &bull;
+        <a href="#" onclick="document.addform['extra.default_encoding:record'].value='utf-8'">UTF-8</a>
+      </div>
+    </td>
+    <td>
+      Encoding used to transform non-unicode queries into unicode
+    <td>
+  </tr>
+
+  <tr>
+    <td>
+    <div class="form-label">
+    Don't split characters
+    </div>
+    </td>
+    <td>
+      <input type="text" name="extra.splitter_additional_chars:record" value="_-"/>
+    </td>
+    <td>
+      Characters that are recognized to be valid parts of a word so the splitter
+      won't split a word containing such characters (e.g. 'C++', 'How-To')
+    <td>
+  </tr>
+
+
+  <tr>
+    <td>
+    <div class="form-label">
+    Languages
+    </div>
+    </td>
+    <td>
+    <textarea name="extra.languages:record:lines" cols="40" rows="2">en</textarea>
+    </td>
+    <td>
+       Languages to be indexed. At least one language must be present.
+       Use one line for each language.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <div class="form-label">
+    Normalizer 
+    </div>
+    </td>
+    <td>
+      <select name="extra.use_normalizer:record:int">
+        <option value="0" selected>No</option>
+        <option value="1" >Yes</option>
+      </select>
+    </td>
+    <td>
+     Perform a normalization of the content before indexing. This is usually 
+     used to replace accented characters with normal characters. Normalization
+     is not available for all languages and only applied if normalization
+     configuration files are available for a particular language.
+    </td>
+  </tr>                                                               
+
+  <tr>
+    <td>
+    <div class="form-label">
+    Stemming
+    </div>
+    </td>
+    <td>
+      <select name="extra.use_stemmer:record:int">
+        <option value="0" selected>No</option>
+        <option value="1" >Yes</option>
+      </select>
+    </td>
+    <td>
+     Stemming reduces all terms to its linguistic base (e.g. 'running' -> 'run'). 
+     Stemming is not compatible with a several TextIndexNG V 3 features.
+    </td>
+  </tr>                                                               
+
+
+  <tr>
+    <td>
+    <div class="form-label">
+    Stopwords
+    </div>
+    </td>
+    <td>
+      <select name="extra.use_stopwords:record:int">
+        <option value="0" selected>No</option>
+        <option value="1" >Yes</option>
+      </select>
+    </td>
+    <td>
+     Remove language dependent stopwords
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <div class="form-label">
+    Splitter
+    </div>
+    </td>
+    <td>                                                       
+      <select name="extra.splitter:record:string">
+        <option tal:repeat="item context/get_splitters"
+                tal:content="item"
+                tal:attributes="value item" 
+        />
+      </select>
+    </td>
+    <td>
+      Splitter to be used
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <div class="form-label">
+    Casefolding 
+    </div>
+    </td>
+    <td>
+      <select name="extra.splitter_casefolding:record:int">
+        <option value="0" >No</option>
+        <option value="1" selected>Yes</option>
+      </select>
+    </td>
+    <td>
+    Map everything to lower-case making searches case-insensitive
+    <td>
+  </tr>
+
+  <tr>
+    <td>
+    <div class="form-label">
+    Index documents with unknown language 
+    </div>
+    </td>
+    <td>
+      <select name="extra.index_unknown_languages:record:int">
+        <option value="0" >No</option>
+        <option value="1" selected>Yes</option>
+      </select>
+    </td>
+    <td>
+    Set this option if you want to index texts with languages other than
+    the configured languages of the index (see above). If set, all these documents
+    are indexed under the *first* configured language of the index.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <div class="form-label">
+    Dedicated storages for fields 
+    </div>
+    </td>
+    <td>
+      <select name="extra.dedicated_storage:record:int">
+        <option value="0" >No</option>
+        <option value="1" selected>Yes</option>
+      </select>
+    </td>
+    <td>
+    Dedicated storages allow per-field searches vs. search over all fields.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <div class="form-label">
+    Autoexpand
+    </div>
+    </td>
+    <td>
+      <select name="extra.autoexpand:record:string">
+        <option value="off" selected>off</option>
+        <option value="always">always</option>
+        <option value="on_miss">on_miss</option>
+      </select>
+    </td>
+    <td>
+    Default mode for automatic right-*-wildcard-search.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <div class="form-label">
+    Autoexpand limit
+    </div>
+    </td>
+    <td>
+      <input type="text" name="extra.autoexpand_limit:record:int" value="4"/>
+    </td>
+    <td>
+    Lower limit for automatic right-*-wildcard-search.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <div class="form-label">
+    Default query parser
+    </div>
+    </td>
+    <td>
+      <select name="extra.query_parser:record:string">
+        <option tal:repeat="item context/get_parsers"
+                tal:content="item"
+                tal:attributes="value item;
+                                SELECTED python: item == 'txng.parsers.en'" 
+        />
+      </select>
+    </td>
+    <td>
+     
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <div class="form-label">
+    Storage
+    </div>
+    </td>
+    <td>
+      <select name="extra.storage:record:string">
+        <option tal:repeat="item context/get_storages"
+                tal:content="item"
+                tal:attributes="value item;
+                                SELECTED python: item == 'txng.storages.default'" 
+        />
+      </select>
+    </td>
+    <td>
+      Storage class to be used. If you want ranking support then you must choose 
+      <em>txng.storage.term_frequencies</em>. Using this storage requires some more space 
+      compared to the default storage.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <div class="form-label">
+    Ranking
+    </div>
+    </td>
+    <td>
+      <select name="extra.ranking:record:int">
+        <option value="0" selected>No</option>
+        <option value="1" >Yes</option>
+      </select>
+    </td>
+    <td>
+      Use ranking as *query* option by default. Using ranking requires that the storage parameter
+      is set to <em>txng.storage.term_frequencies</em>. 
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <div class="form-label">
+    Ranking method
+    </div>
+    </td>
+    <td>
+      <select name="extra.ranking_method:record:string">
+        <option tal:repeat="item context/get_ranking_methods"
+                tal:content="item"
+                tal:attributes="value item;
+                                SELECTED python: item == 'txng.ranking.cosine'" 
+        />
+      </select>
+    </td>
+    <td>
+      Ranking method to be used when ranking results.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    <div class="form-label">
+    Lexicon
+    </div>
+    </td>
+    <td>                                                       
+      <select name="extra.lexicon:record:string">
+        <option tal:repeat="item context/get_lexicons"
+                tal:content="item"
+                tal:attributes="value item" 
+        />
+      </select>
+    </td>
+    <td>
+      Lexicon class to be used
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+    </td>
+    <td   colspan="2">
+    <div class="form-element">
+    <input class="form-element" type="submit" name="submit" 
+     value=" Add " /> 
+    </div>
+    </td>
+  </tr>
+</table>
+</form>
+

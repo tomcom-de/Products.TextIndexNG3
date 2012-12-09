@@ -1,0 +1,25 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml">
+
+  <!-- CMF -->
+
+  <configure zcml:condition="installed Products.CMFDefault">
+
+    <adapter factory=".cmf_adapters.CMFContentAdapter"/>
+
+    <adapter factory=".cmf_adapters.CMFDocumentAdapter"/>
+
+    <adapter factory=".cmf_adapters.CMFFileAdapter"/>
+
+  </configure>
+
+  <!-- Plone -->
+
+  <configure zcml:condition="installed Products.CMFPlone">
+
+    <adapter factory=".plone_adapters.ATFileAdapter"/>
+
+  </configure>
+
+</configure>

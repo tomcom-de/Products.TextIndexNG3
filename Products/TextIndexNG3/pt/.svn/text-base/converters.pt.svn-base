@@ -1,0 +1,42 @@
+<div tal:replace="structure context/manage_page_header"/>
+<div tal:replace="structure context/manage_tabs"/>
+
+<style type="text/css">
+.always { color: green; }        
+.yes { color: green; }        
+.no { color: red; }        
+</style>
+
+
+<div tal:define="converters context/@@get_converters;
+                 converters python:list(converters);
+                 dummy converters/sort" >
+  <table border="0" width="100%">
+    <tr>
+      <th>Mimetype</th>
+      <th>Description</th>
+      <th>Depends on </th>
+      <th>available</th>
+    </tr>
+
+    <tal:loop repeat="item converters">
+      <tr tal:define="mimetype python: item[0];
+                      conv python: item[1]">
+        <td tal:content="mimetype" />
+        <td tal:content="conv/content_description" />
+        <td tal:content="conv/depends_on|nothing" />
+        <td>
+          <span tal:attributes="class conv/isAvailable|nothing"
+                tal:condition="conv/depends_on|nothing" 
+                tal:content="conv/isAvailable|nothing" />
+          <span class="always" tal:condition="not: conv/depends_on|nothing">always</span>
+        
+        </td>
+      </tr>
+    </tal:loop>
+
+  </table>
+</div>
+
+<div tal:content="structure context/txng_footer" />
+<div tal:replace="structure context/manage_page_footer"/>

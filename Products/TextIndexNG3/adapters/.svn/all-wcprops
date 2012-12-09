@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/textindexng/!svn/ver/2305/Products.TextIndexNG3/trunk/Products/TextIndexNG3/adapters
+END
+cmf_adapters.py
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/textindexng/!svn/ver/2305/Products.TextIndexNG3/trunk/Products/TextIndexNG3/adapters/cmf_adapters.py
+END
+configure.zcml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/textindexng/!svn/ver/2168/Products.TextIndexNG3/trunk/Products/TextIndexNG3/adapters/configure.zcml
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/textindexng/!svn/ver/2119/Products.TextIndexNG3/trunk/Products/TextIndexNG3/adapters/__init__.py
+END
+plone_adapters.py
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/textindexng/!svn/ver/2166/Products.TextIndexNG3/trunk/Products/TextIndexNG3/adapters/plone_adapters.py
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/textindexng/!svn/ver/2119/Products.TextIndexNG3/trunk/Products/TextIndexNG3/adapters/README.txt
+END

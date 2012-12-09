@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/textindexng/!svn/ver/2366/Products.TextIndexNG3/trunk/Products/TextIndexNG3/tests
+END
+testExportImport.py
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/textindexng/!svn/ver/2324/Products.TextIndexNG3/trunk/Products/TextIndexNG3/tests/testExportImport.py
+END
+testPlone.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/textindexng/!svn/ver/2366/Products.TextIndexNG3/trunk/Products/TextIndexNG3/tests/testPlone.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/textindexng/!svn/ver/2307/Products.TextIndexNG3/trunk/Products/TextIndexNG3/tests/__init__.py
+END
+txngtest.py
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/textindexng/!svn/ver/2342/Products.TextIndexNG3/trunk/Products/TextIndexNG3/tests/txngtest.py
+END
+testAdapters.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/textindexng/!svn/ver/2311/Products.TextIndexNG3/trunk/Products/TextIndexNG3/tests/testAdapters.py
+END
+testTextIndexNG3.py
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/textindexng/!svn/ver/2347/Products.TextIndexNG3/trunk/Products/TextIndexNG3/tests/testTextIndexNG3.py
+END
+texts.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/textindexng/!svn/ver/2119/Products.TextIndexNG3/trunk/Products/TextIndexNG3/tests/texts.py
+END

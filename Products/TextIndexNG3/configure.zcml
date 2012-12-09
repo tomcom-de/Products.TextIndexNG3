@@ -1,0 +1,63 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:five="http://namespaces.zope.org/five"
+           xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+           xmlns:zcml="http://namespaces.zope.org/zcml"
+           i18n_domain="TextIndexNG3">
+
+  <include package="zopyx.txng3.core" file="configure.zcml"/>
+  <include package=".adapters" file="configure.zcml"/>
+  <include
+      file="exportimport.zcml"
+      zcml:condition="installed Products.GenericSetup"
+      />
+
+  <!-- UI porn -->
+
+  <browser:pages
+      for=".interfaces.ITextIndexNG3"
+      permission="zope2.ViewManagementScreens"
+      >
+
+    <browser:page template="pt/manage.pt" name="manageform" />
+    <browser:page template="pt/queryform.pt" name="queryform" />
+    <browser:page template="pt/vocabulary.pt" name="vocabularyform" />
+    <browser:page template="pt/documentsforword.pt" name="documentsforword" />
+    <browser:page template="pt/converters.pt" name="converters" />
+    <browser:page template="pt/thesaurus.pt" name="thesaurus" />
+    <browser:page template="pt/adapters.pt" name="adapters" />
+    <browser:page template="pt/txng_footer.pt" name="txng_footer" />
+
+  </browser:pages>
+
+  <browser:pages
+      for=".TextIndexNG3.TextIndexNG3"
+      permission="zope2.ViewManagementScreens"
+      class=".browser.IndexView">
+
+     <browser:page attribute="words_vocabulary" name="words_vocabulary" />
+     <browser:page attribute="test_index" name="test_index" />
+     <browser:page attribute="get_vocabulary_stats" name="get_vocabulary_stats" />
+     <browser:page attribute="get_converters" name="get_converters" />
+     <browser:page attribute="get_storages" name="get_storages" />
+     <browser:page attribute="get_lexicons" name="get_lexicons" />
+     <browser:page attribute="get_splitters" name="get_splitters" />
+     <browser:page attribute="get_thesauruses" name="get_thesauruses" />
+     <browser:page attribute="get_thesaurus" name="get_thesaurus" />
+     <browser:page attribute="get_parsers" name="get_parsers" />
+     <browser:page attribute="get_adapters" name="get_adapters" />
+     <browser:page attribute="documents_for_word" name="documents_for_word" />
+   </browser:pages>
+
+  <!-- profiles -->
+
+  <genericsetup:registerProfile
+      zcml:condition="installed Products.CMFDefault"
+      name="default"
+      title="TextIndexNG3"
+      description="Adds TextIndexNG3 support."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      for="Products.CMFCore.interfaces.ISiteRoot"
+      />
+
+</configure>

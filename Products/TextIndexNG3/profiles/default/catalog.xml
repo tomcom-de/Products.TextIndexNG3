@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<object name="portal_catalog">
+ <index name="SearchableText" remove="True"/>
+ <index name="SearchableText" meta_type="TextIndexNG3">
+  <field value="SearchableText"/>
+ </index>
+</object>

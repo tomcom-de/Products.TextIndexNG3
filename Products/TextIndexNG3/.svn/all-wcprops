@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/textindexng/!svn/ver/2366/Products.TextIndexNG3/trunk/Products/TextIndexNG3
+END
+exportimport.zcml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/textindexng/!svn/ver/2119/Products.TextIndexNG3/trunk/Products/TextIndexNG3/exportimport.zcml
+END
+version.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/textindexng/!svn/ver/2352/Products.TextIndexNG3/trunk/Products/TextIndexNG3/version.txt
+END
+exportimport.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/textindexng/!svn/ver/2119/Products.TextIndexNG3/trunk/Products/TextIndexNG3/exportimport.py
+END
+INSTALL.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/textindexng/!svn/ver/2119/Products.TextIndexNG3/trunk/Products/TextIndexNG3/INSTALL.txt
+END
+configure.zcml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/textindexng/!svn/ver/2209/Products.TextIndexNG3/trunk/Products/TextIndexNG3/configure.zcml
+END
+CHANGES.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/textindexng/!svn/ver/2349/Products.TextIndexNG3/trunk/Products/TextIndexNG3/CHANGES.txt
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/textindexng/!svn/ver/2242/Products.TextIndexNG3/trunk/Products/TextIndexNG3/__init__.py
+END
+header.txt
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/textindexng/!svn/ver/2119/Products.TextIndexNG3/trunk/Products/TextIndexNG3/header.txt
+END
+browser.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/textindexng/!svn/ver/2211/Products.TextIndexNG3/trunk/Products/TextIndexNG3/browser.py
+END
+TextIndexNG3.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/textindexng/!svn/ver/2274/Products.TextIndexNG3/trunk/Products/TextIndexNG3/TextIndexNG3.py
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/textindexng/!svn/ver/2119/Products.TextIndexNG3/trunk/Products/TextIndexNG3/Makefile
+END

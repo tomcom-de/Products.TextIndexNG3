@@ -1,0 +1,49 @@
+<div tal:replace="structure context/manage_page_header"/>
+<div tal:replace="structure context/manage_tabs"/>
+
+<div tal:define="thesauruses context/@@get_thesauruses;
+                 thesauruses python:list(thesauruses);
+                 dummy thesauruses/sort" >
+
+  <!-- show all thesauruses -->
+  <table border="0" width="100%" tal:condition="not: request/id|nothing">
+    <tr>
+      <th>Thesaurus</th>
+      <th>Language</th>
+      <th>#Items</th>
+    </tr>
+    <tal:loop repeat="item thesauruses">
+      <tr tal:define="id python: item[0];
+                      thesaurus python: item[1]">
+        <td>
+          <a tal:attributes="href string:thesaurus?id=$id"
+              tal:content="id" 
+          />
+        <td tal:content="thesaurus/getLanguage" />
+        <td tal:content="thesaurus/getSize" />
+      </tr>
+    </tal:loop>
+  </table>
+
+  <!-- show only thesaurus given as request/id -->
+  <table border="0" width="100%" tal:condition="request/id|nothing">
+      <tal:def define="thesaurus context/@@get_thesaurus;
+                       contents thesaurus/getContent;
+                       keys contents/keys;
+                       dummy keys/sort">
+      <tr>
+        <th>Term</th>
+        <th>Related terms</th>
+      </tr>
+      <tr tal:repeat="key keys">
+        <td tal:content="python: key.encode('utf-8')" />
+        <td tal:content="python: ', '.join(contents[key]).encode('utf-8')" />
+      </tr>
+
+    </tal:def>
+  </table>
+
+</div>
+
+<div tal:content="structure context/txng_footer" />
+<div tal:replace="structure context/manage_page_footer"/>

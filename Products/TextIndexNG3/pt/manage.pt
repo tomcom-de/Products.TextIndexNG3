@@ -1,0 +1,84 @@
+<div tal:replace="structure context/manage_page_header"/>
+<div tal:replace="structure context/manage_tabs"/>
+
+<table>
+  <tr>
+    <td># indexed documents</td>
+    <td tal:content="python: len(context.index)"/> 
+  </tr>
+  <tr>
+    <td># indexed words</td>
+    <td tal:content="python: len(context.index.getLexicon())"/> 
+  </tr>
+  <tr>
+    <td>Languages</td>
+    <td tal:content="python: ', '.join(context.index.languages)"/>
+  </tr>
+  <tr>
+    <td>Fields</td>
+    <td tal:content="python: ', '.join(context.index.fields)"/>
+  </tr>
+  <tr>
+    <td>Default encoding</td>
+    <td tal:content="context/index/default_encoding"/>
+  </tr>
+  <tr>
+    <td>Additional characters recognized by the splitter part of a word</td>
+    <td tal:content="context/index/splitter_additional_chars"/>
+  </tr>
+  <tr>
+    <td>Splitter</td>
+    <td tal:content="context/index/splitter"/>
+  </tr>
+  <tr>
+    <td>Stemming</td>
+    <td tal:content="context/index/use_stemmer"/>
+  </tr>
+  <tr>
+    <td>Autoexpand</td>
+    <td tal:content="context/index/autoexpand"/>
+  </tr>
+  <tr>
+    <td>Autoexpand limit</td>
+    <td tal:content="context/index/autoexpand_limit"/>
+  </tr>
+  <tr>
+    <td>Parser</td>
+    <td tal:content="context/index/query_parser"/>
+  </tr>
+  <tr>
+    <td>Casefolding</td>
+    <td tal:content="context/index/splitter_casefolding"/>
+  </tr>
+  <tr>
+    <td>Storage</td>
+    <td tal:content="context/index/storage"/>
+  </tr>
+  <tr>
+    <td>Dedicated storages</td>
+    <td tal:content="context/index/dedicated_storage"/>
+  </tr>
+  <tr>
+    <td>Ranking</td>
+    <td tal:content="context/index/ranking"/>
+  </tr>
+  <tr>
+    <td>Ranking method</td>
+    <td tal:content="context/index/ranking_method"/>
+  </tr>
+  <tr>
+    <td>Normalizer</td>
+    <td tal:content="context/index/use_normalizer"/>
+  </tr>
+  <tr>
+    <td>Stopwords </td>
+    <td tal:content="context/index/use_stopwords"/>
+  </tr>
+  <tr>
+    <td>Index unknown languages</td>
+    <td tal:content="context/index/index_unknown_languages"/>
+  </tr>
+</table>
+
+<div tal:content="structure context/txng_footer" />
+<div tal:replace="structure context/manage_page_footer"/>

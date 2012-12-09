@@ -1,0 +1,33 @@
+<div tal:replace="structure context/manage_page_header"/>
+<div tal:replace="structure context/manage_tabs"/>
+
+<div tal:define="results context/@@get_adapters;
+                 results python: [r for r in results]">
+
+  <!-- show all thesauruses -->
+  <table border="0" width="100%" tal:condition="results">
+    <tr>
+      <th>Adapter for </th>
+      <th>Implemented by</th>
+    </tr>
+    <tal:loop repeat="item results">
+      <tr tal:define="required python: item[0];
+                      value    python: item[1]">
+        <td>
+          <ul>
+            <li tal:repeat="r required" tal:content="nocall: r"/>
+          </ul>
+        </td>
+        <td tal:content="nocall: value" />
+      </tr>
+    </tal:loop>
+  </table>
+
+  <div tal:condition="not: results">
+    No adapters configured!
+  </div>
+
+</div>
+
+<div tal:content="structure context/txng_footer" />
+<div tal:replace="structure context/manage_page_footer"/>

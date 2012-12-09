@@ -1,0 +1,67 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: TextIndexNG3\n"
+"POT-Creation-Date: 2005-07-16 14:06+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: Andreas Jung <andreas@andreas-jung.com>\n"
+"Language-Team: Andreas Jung <andreas@andreas-jung.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: de\n"
+"Language-Name: German\n"
+"Preferred-Encodings: latin1 utf-8\n"
+"Domain: TextIndexNG3\n"
+
+#: txng_maintenance.pt
+#. <li i18n:translate="all_indexes_already_converted" tal:condition="not: convertable">
+#.  All text indexes are already TextIndexNG Version 3 instances. Nothing to do.
+#. </li>
+# Original: "All text indexes are already TextIndexNG Version 3 instances. Nothing to do."
+msgid "all_indexes_already_converted"
+msgstr "Alle Indexe sind bereits konvertiert. Es gibt nichts weiteres zu tun"
+
+
+#: txng_maintenance.pt
+#. <a href="txng_convert_indexes" i18n:translate="convert_indexes">
+#.  Convert SearchableText index to TextIndexNG Version 3 instance
+#. </a>
+# Original: "Convert SearchableText index to TextIndexNG Version 3 instance"
+msgid "convert_indexes"
+msgstr "Konvertiere alle Text Indexe in TextIndexNG Version 3 Instanzen"
+
+
+#: txng_maintenance.pt
+#. <a class="link-parent" href="" i18n:translate="label_up_to_preferences" tal:attributes="href string: $portal_url/plone_control_panel">
+#.     Up to Plone setup
+#. </a>
+# Original: "Up to Plone setup"
+msgid "label_up_to_preferences"
+msgstr "Zum Plone Setup"
+
+
+#: txng_maintenance.pt
+#. <h1 i18n:translate="textindexng_preferences">
+#.  TextIndexNG Version 3 Preferences
+#. </h1>
+# Original: "TextIndexNG Version 3 Preferences"
+msgid "textindexng_preferences"
+msgstr "TextIndexNG Version 3 Voreinstellungen"
+
+
+msgid "recreate indexes"
+msgstr "Indexe neuanlegen und reindexieren"
+
+#- Removed msgids:
+# 
+
+#- Added msgids:
+#  u'textindexng_preferences' u'label_up_to_preferences'
+# u'all_indexes_already_converted' u'convert_indexes'
+
+#- Added msgids by merging file None:
+# 

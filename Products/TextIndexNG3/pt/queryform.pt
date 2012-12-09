@@ -1,0 +1,39 @@
+<div tal:replace="structure context/manage_page_header"/>
+<div tal:replace="structure context/manage_tabs"/>
+
+<br>
+<fieldset>
+  <legend>Query TextIndexNG3 instance</legend>
+  <form method="get" action="queryform">
+    <input type="text" name="query:ustring:utf-8" size="80" tal:attributes="value request/query|nothing">
+    <br/>
+    Parser:
+    <select name="parser">
+      <option tal:repeat="parser context/@@get_parsers"
+              tal:attributes="value python: parser[0];
+                              SELECTED python: parser[0] == request.get('parser', 'txng.parsers.en')" 
+              tal:content="python: parser[0]" 
+      />
+    </select>
+    <input type="submit" value=" Search "/>
+  </form>
+</fieldset>
+
+<tal:if condition="request/query|nothing">
+  <div tal:define="query request/query;
+                   parser request/parser;
+                   test_index nocall: context/@@test_index;
+                   paths python: test_index(query, parser)">
+    <h3 tal:content="string: Search results for: ${request/query|nothing}" />
+    <ol>
+      <li tal:repeat="path paths">
+        <a tal:content="path"
+           tal:attributes="href path" 
+           />
+      </li>
+    </ol>
+  </div>
+</tal:if>
+
+<div tal:content="structure context/txng_footer" />
+<div tal:replace="structure context/manage_page_footer"/>

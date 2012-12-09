@@ -1,0 +1,57 @@
+<div tal:replace="structure context/manage_page_header"/>
+<div tal:replace="structure context/manage_tabs"/>
+
+<br>
+<fieldset>
+  <legend>Vocabulary</legend>
+  <form method="GET" action="vocabularyform"
+        tal:define="languages context/index/languages;
+                    default_language python: languages[0]">
+    <table>
+      <tr>
+        <td>
+          <input type="text" name="pattern:ustring:utf-8" size="20" tal:attributes="value request/pattern|nothing">
+          <select name="language">
+            <option tal:repeat="lang languages"
+                    tal:content="lang"
+                    tal:attributes="value lang;
+                                    SELECTED python: request.get('language') == lang"
+            />                        
+          </select>
+        </td>
+        <td>
+          <tal:loop tal:repeat="c string:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz">
+            <a tal:attributes="href string:vocabularyform?pattern=${c}*&language=${request/language|default_language}"
+               tal:content="c"/>
+          </tal:loop>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" tal:define="stats context/@@get_vocabulary_stats">
+            Words per language:
+           <tal:loop repeat="lang stats">
+                <span tal:content="lang" /> (<span tal:content="stats/?lang" />)
+            </tal:loop>
+        </td>
+      <tr>
+    </table>
+    <input type="submit" value=" Show matching words"/>
+  </form>
+</fieldset>
+
+<tal:if condition="request/pattern|nothing" >
+  <div tal:define="wv nocall: context/@@words_vocabulary;
+                   words python: wv(request.get('pattern'), request.get('language'))">
+
+    <h3>Number of words matching: <span tal:content="python: len(words)" /></h3>
+    <ul>
+      <li tal:repeat="word words">
+        <a tal:attributes="href string:documentsforword?word:ustring:utf-8=$word&language=${request/language|default_language}" tal:content="word" />
+      </li>
+    </ul> 
+    <span tal:condition="not: words">No matching words found</span>
+  </div>
+</tal:if>
+
+<div tal:content="structure context/txng_footer" />
+<div tal:replace="structure context/manage_page_footer"/>
