@@ -1,3 +1,11 @@
+3.4.5 (2013/05/26)
+==================
+- fixed deprecation warning about getSiteEncoding()
+
+3.4.4 (2011/06/15)
+==================
+- fixed version number in metadata.xml
+
 3.4.4 (2011/06/15)
 ==================
 - fixed version number in metadata.xml

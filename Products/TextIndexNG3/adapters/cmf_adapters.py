@@ -37,22 +37,11 @@ class CMFContentAdapter:
 
     def __init__(self, context):
         self.context = context
-        self.encoding = self._getSiteEncoding()
+        self.encoding = 'utf-8'
         try:
             self.language = context.Language()
         except AttributeError:
             self.language = DEFAULT_LANGUAGE
-
-    def _getSiteEncoding(self):
-        plone_utils = getToolByName(self.context, 'plone_utils', None)
-        if plone_utils is not None:
-            return plone_utils.getSiteEncoding()
-
-        ptool = getToolByName(self.context, 'portal_properties', None)
-        if ptool is not None:
-            return ptool.getProperty('default_charset', 'utf-8')
-
-        return 'utf-8'
 
     def _c(self, text):
         if isinstance(text, unicode):
