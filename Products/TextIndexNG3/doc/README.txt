@@ -24,7 +24,7 @@ Features
 - multiple-field indexing (e.g. you can create one index to index content
   by title, author and body and perform queries against each field)
 
-- multi-lingual support 
+- multi-lingual support  (Products.LinguaPlone and plone.app.multilingual)
 
 - pluggable components (storages, lexicons, query parsers, splitters, 
   stopwords, normalizers) 
@@ -48,32 +48,25 @@ Requirements
 Download and project area
 =========================
 
-TextIndexNG 3 downloads etc. are currently hosted on Sourceforge:
+TextIndexNG 3 is currently hosted on Github:
    
-      http://sf.net/projects/textindexng
-
-The primary project page for TextIndexNG3 is:
-
-      http://pypi.python.org/pypi/Products.TextIndexNG3
-
+    https://github.com/zopyx/Products.TextIndexNG3
 
 Support
 =======
 
   Bugs, support issues are handled for free ``soley`` either through the
-  TextIndexNG 3 bugtracker at Sourceforge:
+  TextIndexNG 3 bugtracker on Github:
 
-     http://sourceforge.net/tracker/?group_id=50052
+    https://github.com/zopyx/Products.TextIndexNG3/issues
 
 
   Dedicated commercial support is available on a per-hour or per-issue basis
   from http://www.zopyx.com/. 
 
-  The latest SVN checkout is available from the TextIndexNG SVN (see
+  The latest source code is available from Github
 
-    http://sourceforge.net/svn/?group_id=50052
-
-  for SVN checkout instructions). 
+    https://github.com/zopyx/Products.TextIndexNG3
 
 
 License
@@ -127,9 +120,7 @@ Installation with zc.buildout
 
   Compiling and installing the extension modules requires a C compiler
   (usually GCC on Unix systems works perfectly). On Windows systems you need
-  Visual C++ to compile the extension modules. Untested binary versions of the
-  extension modules for Windows are available from the TextIndexNG3 download area
-  on Sourceforge. 
+  Visual C++ to compile the extension modules. 
 
 Installation on Plone
 ---------------------
@@ -382,8 +373,7 @@ Contact
 =======
 
 | ZOPYX Ltd. 
-| c/o Andreas Jung, 
-| Charlottenstr. 37/1
-| D-72070 Tuebingen, Germany
+| Hundskapfklinge 33
+| D-72074 Tuebingen, Germany
 | E-mail: info at zopyx dot com
 | Web: http://www.zopyx.com
