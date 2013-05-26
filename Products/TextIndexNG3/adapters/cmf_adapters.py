@@ -39,7 +39,10 @@ class CMFContentAdapter:
         self.context = context
         self.encoding = 'utf-8'
         try:
-            self.language = context.Language()
+            if callable(context.Language):
+                self.language = context.Language()
+            else:
+                self.language = context.Language # plone.app.multilingual
         except AttributeError:
             self.language = DEFAULT_LANGUAGE
 

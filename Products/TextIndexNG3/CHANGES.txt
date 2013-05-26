@@ -1,3 +1,7 @@
+3.4.7 (2013/05/26)
+==================
+- workaround for plone.app.multilingual misbehaviour in cmf_adapters
+
 3.4.6 (2013/05/26)
 ==================
 - fixed deprecation warning about getSiteEncoding()
